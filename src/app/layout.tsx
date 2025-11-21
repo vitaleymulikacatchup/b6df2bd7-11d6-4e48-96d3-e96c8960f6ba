@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { PostHogWrapper } from "@/components/PostHogWrapper";
 import Tag from "@/tag/Tag";
+import ThemeProvider from "@/providers/themeProvider/ThemeProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -12,7 +13,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "CarShare - Smart Urban Mobility & Car Sharing Platform",
   description: "Discover the future of urban transportation with CarShare. Access premium vehicles instantly through our app. Flexible pricing, comprehensive insurance, and eco-friendly options.",
-  keywords: "car sharing, urban mobility, vehicle rental, transportation app, eco-friendly transport, city commute",
+  keywords: ["car sharing", "urban mobility", "vehicle rental", "transportation app", "eco-friendly transport", "city commute"],
   metadataBase: new URL("https://carshare.com"),
   alternates: {
     canonical: "https://carshare.com"
@@ -50,11 +51,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <PostHogWrapper>
-        <body
-          className={`${outfit.variable} antialiased`}
-        >
-          <Tag />
-          {children}
+        <body className={outfit.variable}>
+          <ThemeProvider
+            defaultButtonVariant="expand-hover"
+            defaultTextAnimation="entrance-slide"
+            borderRadius="pill"
+            contentWidth="large"
+            sizing="large"
+            background="grid"
+            cardStyle="solid-bordered"
+            primaryButtonStyle="flat"
+            secondaryButtonStyle="solid"
+            showBlurBottom={true}
+          >
+            <Tag />
+            {children}
+          </ThemeProvider>
         
         <script
           dangerouslySetInnerHTML={{
