@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import HeroCarouselLogo from '@/components/sections/hero/heroCarouselLogo/HeroCarouselLogo';
 import SplitAbout from '@/components/sections/about/SplitAbout';
@@ -18,7 +19,18 @@ import { Car, Zap, CreditCard, TrendingUp, Users, MessageSquare, Shield, BookOpe
 
 export default function CarSharePage() {
   return (
-    <>
+    <ThemeProvider
+      defaultButtonVariant="expand-hover"
+      defaultTextAnimation="entrance-slide"
+      borderRadius="pill"
+      contentWidth="large"
+      sizing="large"
+      background="grid"
+      cardStyle="solid-bordered"
+      primaryButtonStyle="flat"
+      secondaryButtonStyle="solid"
+      showBlurBottom={true}
+    >
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
           navItems={[
@@ -50,7 +62,7 @@ export default function CarSharePage() {
             { imageSrc: "/placeholders/placeholder1.webp", imageAlt: "Luxury car sharing service" },
             { imageSrc: "/placeholders/placeholder1.webp", imageAlt: "SUV car sharing for families" },
             { imageSrc: "/placeholders/placeholder1.webp", imageAlt: "Eco-friendly electric vehicles" }
-          ]}
+          ]
           autoplayDelay={4000}
           showDimOverlay={false}
         />
@@ -546,6 +558,6 @@ export default function CarSharePage() {
           ]}
         />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
