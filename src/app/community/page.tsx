@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import TeamCardTwo from '@/components/sections/team/TeamCardTwo';
 import TestimonialCardTwo from '@/components/sections/testimonial/TestimonialCardTwo';
@@ -8,11 +9,22 @@ import FaqSplitText from '@/components/sections/faq/FaqSplitText';
 import BlogCardTwo from '@/components/sections/blog/BlogCardTwo';
 import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterLogoEmphasis from '@/components/sections/footer/FooterLogoEmphasis';
-import { Users, MessageSquare, Shield, BookOpen, Mail } from "lucide-react";
+import { Users, MessageSquare, Shield, BookOpen, Mail, Linkedin, Twitter, Github } from "lucide-react";
 
 export default function CommunityPage() {
   return (
-    <>
+    <ThemeProvider
+      defaultButtonVariant="expand-hover"
+      defaultTextAnimation="entrance-slide"
+      borderRadius="pill"
+      contentWidth="large"
+      sizing="large"
+      background="grid"
+      cardStyle="solid-bordered"
+      primaryButtonStyle="flat"
+      secondaryButtonStyle="solid"
+      showBlurBottom={true}
+    >
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
           navItems={[
@@ -45,20 +57,20 @@ export default function CommunityPage() {
               imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Sarah Johnson, CEO",
               socialLinks: [
-                { icon: "Linkedin", url: "https://linkedin.com/in/sarahjohnson" },
-                { icon: "Twitter", url: "https://twitter.com/sarahjohnson" }
+                { icon: Linkedin, url: "https://linkedin.com/in/sarahjohnson" },
+                { icon: Twitter, url: "https://twitter.com/sarahjohnson" }
               ]
             },
             {
               id: "michael",
               name: "Michael Chen",
               role: "CTO",
-              description: "Tech visionary who's built scalable platforms for millions of users worldwide.",
+              description: "Tech visionary who has built scalable platforms for millions of users worldwide.",
               imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Michael Chen, CTO",
               socialLinks: [
-                { icon: "Linkedin", url: "https://linkedin.com/in/michaelchen" },
-                { icon: "Github", url: "https://github.com/michaelchen" }
+                { icon: Linkedin, url: "https://linkedin.com/in/michaelchen" },
+                { icon: Github, url: "https://github.com/michaelchen" }
               ]
             },
             {
@@ -69,19 +81,19 @@ export default function CommunityPage() {
               imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "Emma Rodriguez, Head of Operations",
               socialLinks: [
-                { icon: "Linkedin", url: "https://linkedin.com/in/emmarodriguez" }
+                { icon: Linkedin, url: "https://linkedin.com/in/emmarodriguez" }
               ]
             },
             {
               id: "david",
               name: "David Kim",
               role: "VP of Marketing",
-              description: "Growth strategist who's helped scale multiple successful mobility startups.",
+              description: "Growth strategist who has helped scale multiple successful mobility startups.",
               imageSrc: "/placeholders/placeholder1.webp",
               imageAlt: "David Kim, VP Marketing",
               socialLinks: [
-                { icon: "Linkedin", url: "https://linkedin.com/in/davidkim" },
-                { icon: "Twitter", url: "https://twitter.com/davidkim" }
+                { icon: Linkedin, url: "https://linkedin.com/in/davidkim" },
+                { icon: Twitter, url: "https://twitter.com/davidkim" }
               ]
             }
           ]}
@@ -94,7 +106,7 @@ export default function CommunityPage() {
       <div id="testimonials" data-section="testimonials">
         <TestimonialCardTwo
           title="What Our Users Say"
-          description="Real stories from real people who've transformed their daily commute with CarShare."
+          description="Real stories from real people who have transformed their daily commute with CarShare."
           tag="Customer Reviews"
           tagIcon={MessageSquare}
           testimonials={[
@@ -192,7 +204,7 @@ export default function CommunityPage() {
             {
               id: "3",
               title: "Do I need my own insurance?",
-              content: "No! Every trip is covered by our comprehensive insurance policy. You're protected from the moment you unlock the car."
+              content: "No! Every trip is covered by our comprehensive insurance policy. You are protected from the moment you unlock the car."
             },
             {
               id: "4",
@@ -202,7 +214,7 @@ export default function CommunityPage() {
             {
               id: "5",
               title: "Can I extend my reservation?",
-              content: "Yes! You can extend your trip directly from the app, subject to availability. We'll notify you of any conflicts with upcoming bookings."
+              content: "Yes! You can extend your trip directly from the app, subject to availability. We will notify you of any conflicts with upcoming bookings."
             }
           ]}
           animationType="smooth"
@@ -258,7 +270,7 @@ export default function CommunityPage() {
           tag="Get Started"
           tagIcon={Mail}
           title="Ready to Transform Your Commute?"
-          description="Join thousands of smart commuters who've already discovered the freedom of shared mobility. Start your journey today."
+          description="Join thousands of smart commuters who have already discovered the freedom of shared mobility. Start your journey today."
           inputPlaceholder="Enter your email address"
           buttonText="Join CarShare"
           termsText="By joining CarShare, you agree to our Terms of Service and Privacy Policy. No spam, ever."
@@ -296,6 +308,6 @@ export default function CommunityPage() {
           ]}
         />
       </div>
-    </>
+    </ThemeProvider>
   );
 }

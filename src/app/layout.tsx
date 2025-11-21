@@ -3,7 +3,6 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { PostHogWrapper } from "@/components/PostHogWrapper";
 import Tag from "@/tag/Tag";
-import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -54,21 +53,8 @@ export default function RootLayout({
         <body
           className={`${outfit.variable} antialiased`}
         >
-          <ThemeProvider
-            defaultButtonVariant="expand-hover"
-            defaultTextAnimation="entrance-slide"
-            borderRadius="pill"
-            contentWidth="large"
-            sizing="large"
-            background="grid"
-            cardStyle="solid-bordered"
-            primaryButtonStyle="flat"
-            secondaryButtonStyle="solid"
-            showBlurBottom={true}
-          >
-            <Tag />
-            {children}
-          </ThemeProvider>
+          <Tag />
+          {children}
         
         <script
           dangerouslySetInnerHTML={{
